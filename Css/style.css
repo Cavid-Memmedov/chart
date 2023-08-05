@@ -1,0 +1,269 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+button {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  width: 80px;
+  padding: 5px;
+  margin: 40px 20px;
+}
+
+button:hover {
+  background-color: wheat;
+  cursor: pointer;
+}
+.article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  /* display: none; */
+}
+
+.container {
+  width: 600px;
+  height: 427px;
+  border-radius: 8px;
+  background-color: #f4f6f8;
+}
+
+.header p {
+  font-weight: bold;
+  padding: 15px 10px;
+}
+
+.header {
+  height: 64px;
+  width: 100%;
+  background-color: #f4f6f8;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  background-color: white;
+  padding: 20px;
+  height: max-content;
+}
+
+.footer {
+  display: flex;
+  position: relative;
+}
+
+#piechart{
+  position: absolute;
+  margin: 29px 150px;
+  width: 300px;
+  height: 200px;
+  display: none;
+  
+}
+
+#piechart.active{
+  display: block;
+}
+
+svg>rect{
+    fill: #F4F6F8;
+}
+
+.main {
+  position: relative;
+}
+
+.main > span {
+  position: absolute;
+  z-index: 9999;
+  background-color: #fff;
+  color: #919eab;
+  font-family: Public Sans;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 7px;
+  top: 18px;
+  left: 30px;
+}
+
+.dropdown_container {
+  position: relative;
+}
+
+.dropdown_container .menu-select {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  width: 246px;
+  padding: 8px;
+  user-select: none;
+}
+
+.menu-select img {
+  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+.menu-select.active img {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+}
+
+.dropdown_container .menu-select:hover {
+  cursor: pointer;
+}
+
+.dropdown_container .menu-options {
+  opacity: 0;
+  visibility: hidden;
+  /* overflow: hidden; */
+  pointer-events: none;
+  height: 0;
+  transition: opacity 0.3s ease-in-out;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -moz-transition: opacity 0.3s ease-in-out;
+  -ms-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+}
+
+.menu-select.active ~ .menu-options {
+  background-color: aliceblue;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  padding: 6px 0px;
+  width: 184px;
+  height: max-content;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-shadow: -20px 20px 40px -4px rgba(145, 158, 171, 0.24),
+    0px 0px 2px 0px rgba(145, 158, 171, 0.24);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+}
+
+.menu-options .option-item {
+  padding: 6px 0px;
+  display: flex;
+}
+
+.menu-options .option-item:hover {
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.button_container {
+  margin-left: 350px;
+  margin-top: 190px;
+}
+
+.menu-options.active {
+  display: block;
+}
+
+.option-item p {
+  margin: 9px;
+}
+
+.main-container {
+  display: flex;
+}
+
+#img {
+  background-color: #fff;
+}
+
+.option-item-right {
+  display: flex;
+  padding: 5px;
+  /* position: relative; */
+}
+
+.option-item-right p {
+  width: 140px;
+}
+
+#img2:hover {
+  cursor: pointer;
+}
+
+.option-item-right.active img {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+}
+
+.option-content {
+  position: absolute;
+  top: 47px;
+  left: 183px;
+  background-color: aliceblue;
+  display: none;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  border: 1px solid #ccc;
+
+}
+
+.option-content p {
+  padding: 5px 10px;
+}
+
+.option-content p:hover {
+  background-color: white;
+  cursor: pointer;
+}
+
+.option-content.active {
+  display: block;
+}
+
+.option-item-right:hover {
+  background-color: white;
+  cursor: pointer;
+}
+
+#content{
+  height: 170px;
+  overflow-y: scroll;
+}
+
