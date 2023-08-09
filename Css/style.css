@@ -57,9 +57,14 @@ button:hover {
   height: max-content;
 }
 
-.footer {
+#barChart,#burunChart,#donutChart{
+  max-width: 400px;
+}
+
+.canvas-container{
+  padding-top:30px;
   display: flex;
-  position: relative;
+  justify-content: center;
 }
 
 #piechart{

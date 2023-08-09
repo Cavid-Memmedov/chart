@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
 
 <body>
 
@@ -24,104 +25,100 @@
                 <p>Add Chart</p>
             </div>
 
+            
+
             <div class="main-container">
                 <div class="main">
                     <span>Chart style</span>
                     <div class="dropdown_container">
-                        <div class="menu-select">
+                        <div class="menu-select" onclick="openMenu(this)">
                             <p>All</p>
                             <img src="./assets/icons/arrow.svg" alt="">
                         </div>
                         <div class="menu-options">
-                            <div class="option-item">
+                            <div class="option-item" id="column-chart">
                                 <img src="./assets/icons/solar_chart-bold-duotone.svg" alt="">
                                 <p>Column</p>
                             </div>
-                            <div class="option-item">
+                            <div class="option-item" id="burun-chart">
                                 <img src="./assets/icons/gg_chart.svg" alt="">
-                                <p>Burrun</p>
+                                <p>Burun</p>
                             </div>
-                            <div class="option-item">
+                            <div class="option-item" id="donut-chart">
                                 <img src="./assets/icons/mdi_chart-arc.svg" alt="">
                                 <p>Donut</p>
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <div class="main">
                     <span>Axis</span>
                     <div class="dropdown_container">
-                        <div class="menu-select">
+                        <div class="menu-select toggle-option" onclick="openMenu(this)">
                             <p>All</p>
                             <img src="./assets/icons/arrow.svg" alt="">
                         </div>
                         <div class="menu-options">
-
                             <div class="option-item-right">
-                                <p>Assigned</p>
-                                <img src="./assets/icons/ic_chevron_right.svg" alt="" id="img2" >
-                               </div>
-                            <div class="option-item-right">
-                                <p>Task Type</p>
-                                <img src="./assets/icons/ic_chevron_right.svg" alt="" id="img2" class="icon">
-                                 <div class="option-content" id="">
+                            <p>Task Type</p>
+                            <img src="./assets/icons/ic_chevron_right.svg" alt="" id="img2" class="icon">
+                                <div class="option-content" id="">
                                     <p>Highest</p>
                                     <p>High</p>
                                     <p>Medium</p>
                                     <p>Low</p>
                                     <p>Very low</p>
-                            </div>    
-                            </div>
-                            <div class="option-item-right">
-                                <p>Task Steps</p>
-                                <img src="./assets/icons/ic_chevron_right.svg" alt="" id="img2" class="icon1">
-                                <div class="option-content">
-                                      <p>To do</p>
-                                      <p>In progress</p>
-                                      <p>Analys</p>
-                                      <p>Done</p>
+                                </div>    
                                 </div>
-                            </div>
-                            <div class="option-item-right">
-                                <p>Date Group</p>
-                                <img src="./assets/icons/ic_chevron_right.svg" alt="" id="img2"  class="icon2"> 
-                                <div class="option-content" id="">  
-                                    <p>End Date...</p>
-                                    <p>Delayed</p>
-                                    <p>Finished Today</p>
-                                    <p>Ending Next Week</p>
-                                    <p>Will End in a Future...</p>
+                                <div class="option-item-right">
+                                    <p>Task Steps</p>
+                                    <img src="./assets/icons/ic_chevron_right.svg" alt="" id="img2" class="icon1">
+                                    <div class="option-content">
+                                        <p>To do</p>
+                                        <p>In progress</p>
+                                        <p>Analys</p>
+                                        <p>Done</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="option-item-right">
-                                <p>Closed tasks</p>
-                                <img src="./assets/icons/ic_chevron_right.svg" alt="" id="img2" class="icon3">
-                                <div class="option-content" id="content">
-                                    <p>Today</p>
-                                    <p>Yesterday</p>
-                                    <p>Tomorrow</p>
-                                    <p>This week </p>
-                                    <p>Last week </p>
-                                    <p>Next week</p>
-                                    <p>This month</p>
-                                    <p>Last month</p>
-                                    <p>Last 3 months</p>
-                                    <p>Last 6 months</p>
-                                    <p>Last 9 months</p>
-                                    <p>This year</p>
-                                    <p>Next year</p>
-                                    <p>Last year</p>
-                                    <p>Last 2 years</p>
-                                    <p>Last 7 days</p>
-                                    <p>Last 30 days</p>
-                                    <p>Last 90 days</p>
-                                    <p>Last 120 days</p>
-                                    <p>Last 15 minutes</p>
-                                    <p>Last 30 minutes</p>
-                                    <p>Last 45 minutes</p>
+                                <div class="option-item-right">
+                                    <p>Date Group</p>
+                                    <img src="./assets/icons/ic_chevron_right.svg" alt="" id="img2"  class="icon2"> 
+                                    <div class="option-content" id="">  
+                                        <p>End Date...</p>
+                                        <p>Delayed</p>
+                                        <p>Finished Today</p>
+                                        <p>Ending Next Week</p>
+                                        <p>Will End in a Future...</p>
+                                    </div>
                                 </div>
-                            </div>
+                                <div class="option-item-right">
+                                    <p>Closed tasks</p>
+                                    <img src="./assets/icons/ic_chevron_right.svg" alt="" id="img2" class="icon3">
+                                    <div class="option-content" id="content">
+                                        <p>Today</p>
+                                        <p>Yesterday</p>
+                                        <p>Tomorrow</p>
+                                        <p>This week </p>
+                                        <p>Last week </p>
+                                        <p>Next week</p>
+                                        <p>This month</p>
+                                        <p>Last month</p>
+                                        <p>Last 3 months</p>
+                                        <p>Last 6 months</p>
+                                        <p>Last 9 months</p>
+                                        <p>This year</p>
+                                        <p>Next year</p>
+                                        <p>Last year</p>
+                                        <p>Last 2 years</p>
+                                        <p>Last 7 days</p>
+                                        <p>Last 30 days</p>
+                                        <p>Last 90 days</p>
+                                        <p>Last 120 days</p>
+                                        <p>Last 15 minutes</p>
+                                        <p>Last 30 minutes</p>
+                                        <p>Last 45 minutes</p>
+                                    </div>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -129,48 +126,29 @@
 
             </div>
             <div class="footer">
-                
-                <div id="piechart"></div>
 
-                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js" ></script>
-            
-                <script type="text/javascript">
-                    // Load google charts
-                    google.charts.load('current', {'packages':['corechart']});
-                    google.charts.setOnLoadCallback(drawChart);
+                <div class="canvas-container">
+                    <canvas id="barChart" height="140" width="400">
                     
-                    // Draw the chart and set the chart values
-                    function drawChart() {
-                      var data = google.visualization.arrayToDataTable([
-                      ['Task', 'Hours per Day'],
-                      ['Work', 8],
-                      ['Friends', 2],
-                      ['Eat', 2],
-                      ['TV', 3],
-                    ]);
-                    
-                      // Optional; add a title and set the width and height of the chart
-                    //   var options = {'width':400, 'height':300};
-                    
-                    //   // Display the chart inside the <div> element with id="piechart"
-                      let chart = new google.visualization.PieChart(document.getElementById('piechart'));
-                      chart.draw(data);
-                    }
-                      
-                    
-                    
-                    </script>
-
-                <div class="button_container">
-                    <button id="btn2">Discard</button>
-                    <button id="btn3">Save</button>
+                    </canvas>
                 </div>
+                
+                <div id="canvas-container">
+                    <canvas id="donutChart" height="140" width="400"></canvas>
+                </div>
+
+                <div class="canvas-container">
+                    <canvas id="burunChart" height="140" width="400"></canvas>
+                </div>
+
             </div>
-            
-            
         </div>
     </div>
-    <script src="./Js/script.js" ></script>
-</body>
 
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js" ></script>
+    <script src="./Js/script.js"></script>
+    <script src="./Js/chart.js"></script>
+    <script src="./Js/burun.js"></script>
+    <script src="./Js/donut.js"></script>
+</body>
 </html>
