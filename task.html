@@ -18,14 +18,12 @@
         Add Chart
     </button>
 
-    <div class="article">
+    <div class="article" id="my-main">
         <div class="container">
 
             <div class="header">
                 <p>Add Chart</p>
             </div>
-
-            
 
             <div class="main-container">
                 <div class="main">
@@ -36,15 +34,15 @@
                             <img src="./assets/icons/arrow.svg" alt="">
                         </div>
                         <div class="menu-options">
-                            <div class="option-item" id="column-chart">
+                            <div class="option-item" id="column-chart" onclick="currentChart('barChart')">
                                 <img src="./assets/icons/solar_chart-bold-duotone.svg" alt="">
                                 <p>Column</p>
                             </div>
-                            <div class="option-item" id="burun-chart">
+                            <div class="option-item" id="burun-chart" onclick="currentChart('burunChart')">
                                 <img src="./assets/icons/gg_chart.svg" alt="">
                                 <p>Burun</p>
                             </div>
-                            <div class="option-item" id="donut-chart">
+                            <div class="option-item" id="donut-chart" onclick="currentChart('donutChart')">
                                 <img src="./assets/icons/mdi_chart-arc.svg" alt="">
                                 <p>Donut</p>
                             </div>
@@ -125,7 +123,7 @@
                 <img src="./assets/icons/ic_filter.svg" alt="" id="img">
 
             </div>
-            <div class="footer">
+            <div class="footer" id="footer">
 
                 <div class="canvas-container">
                     <canvas id="barChart" height="140" width="400">
@@ -141,6 +139,10 @@
                     <canvas id="burunChart" height="140" width="400"></canvas>
                 </div>
 
+                <div class="button-container">
+                    <button>Discard</button>
+                    <button id="save-chart">Save</button>
+                </div>
             </div>
         </div>
     </div>
@@ -150,5 +152,6 @@
     <script src="./Js/chart.js"></script>
     <script src="./Js/burun.js"></script>
     <script src="./Js/donut.js"></script>
+    <script src="./Js/addchart.js"></script>
 </body>
 </html>
